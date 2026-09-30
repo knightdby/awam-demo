@@ -34,9 +34,9 @@
 @media(max-width:760px){.ablation-heading{display:block}.ablation-heading>span{display:block;margin-top:10px}.ablation-bars{gap:8px}.ablation-track{height:100px}.ablation-track strong{left:6px;font-size:18px}.ablation-track strong small{font-size:9px}.ablation-item>span{font-size:9px}}
 
 /* Video-only background collage; restore the original foreground hero. */
-.hero-mosaic{inset:0;grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:2px;z-index:0}
-.hero-mosaic .mosaic-tile:nth-child(n){grid-column:span 2;grid-row:auto}
-.hero-mosaic .mosaic-tile:nth-child(n+4){grid-column:span 3}
+.hero-mosaic{inset:0;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:2px;z-index:0}
+.hero-mosaic .mosaic-tile:nth-child(n){grid-column:span 3;grid-row:auto}
+.hero-mosaic .mosaic-tile:nth-child(n+5){grid-column:span 4}
 .mosaic-tile video{opacity:1;object-fit:cover}
 .mosaic-tile:after{display:none}
 .hero-shade{z-index:1;background:linear-gradient(180deg,#070b0f30 0%,#070b0f46 30%,#070b0f70 62%,#070b0fdb 100%)}
@@ -45,15 +45,15 @@
 .hero .subtitle{font-size:clamp(21px,2.4vw,34px);line-height:1.4;margin-top:24px}
 .hero-topline{top:28px;z-index:2}
 .hero-bottom{bottom:25px;left:32px;right:32px;z-index:2}
-.hero .hero-actions{margin:0 0 35px}
 .hero .btn{padding:13px 25px}
 .hero-meta{border-top:1px solid #ffffff28;padding-top:17px}
+.hero-resources{display:flex;justify-content:center;align-items:center;gap:12px;margin:0 auto 22px}.hero-resources .btn{width:auto;min-width:150px;min-height:44px;padding:10px 20px;white-space:nowrap;font-size:13px;background:#10171382;border-color:#9bcf4d80}.hero-resources .btn:hover{background:#10171382;color:#fff;transform:none}
 .hero-stage.showreel{border-radius:36px}
 .nav-links a,.nav-links a:last-child{position:relative;border:0;border-radius:0;padding:0 0 7px;margin:0;transition:color .2s}.nav-links a.active{color:#fff}.nav-links a.active:after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:var(--green)}
 .paper-feature{margin-top:28px;padding-top:24px;border-top:1px solid #323639}.paper-feature h3{font-size:16px;font-weight:500;color:#d8e3d2;margin-bottom:14px}
 @media(max-width:760px){
 .hero{min-height:670px}
-.hero-mosaic{inset:0;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr))}
+.hero-mosaic{inset:0;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr))}
 .hero-mosaic .mosaic-tile:nth-child(n){grid-column:auto;grid-row:auto}
 .hero-mosaic .mosaic-tile:last-child{grid-column:span 2}
 .hero-copy{inset:32% 16px auto;height:auto;padding:0;background:none}
@@ -61,9 +61,9 @@
 .hero .subtitle{font-size:21px;line-height:1.45;margin-top:20px}
 .hero-topline{top:22px;font-size:8px}
 .hero-bottom{left:18px;right:18px;bottom:22px}
-.hero .hero-actions{margin-bottom:24px}
 .hero .btn{font-size:11px;padding:11px 16px}
 .hero-meta{padding-top:12px}
+.hero-resources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:14px}.hero-resources .btn{width:100%;min-width:0;min-height:40px;padding:8px 6px;font-size:10px}
 .hero-stage.showreel{border-radius:25px}
 .mosaic-note{font-size:9px}
 }
@@ -74,11 +74,11 @@
 <main id="top">
 <section class="hero" aria-label="AWAM introduction">
 <div class="hero-stage showreel">
-<div class="hero-mosaic" id="heroMosaic" aria-label="Five simultaneous execution videos"></div>
+<div class="hero-mosaic" id="heroMosaic" aria-label="Simultaneous multi-task execution videos"></div>
 <div class="hero-shade"></div>
-<div class="hero-topline"><span>AGENTIC INTELLIGENCE. PHYSICAL FORESIGHT.</span><span class="live-label">MULTI-TASK EXECUTION · 3× VIDEO</span></div>
+<div class="hero-topline"><span>AGENTIC INTELLIGENCE. PHYSICAL FORESIGHT.</span><span class="live-label" id="heroTaskCount">MULTI-TASK EXECUTION</span></div>
 <div class="hero-copy"><h1><span>AW</span>AM</h1><p class="subtitle">Agentic World Action Model<br>for Embodied Intelligence</p></div>
-<div class="hero-bottom"><div class="hero-actions"><a class="btn primary" href="#method">Explore AWAM</a><a class="btn" href="#execution">Explore the Timeline</a><a class="btn" href="#results">Benchmark Results</a></div><div class="hero-meta"><span class="mosaic-note">5 recorded videos · simultaneous playback</span><button id="heroToggle" type="button">Pause motion</button></div></div>
+<div class="hero-bottom"><div class="hero-resources" aria-label="Project resources"><a class="btn" href="#" data-placeholder-link aria-disabled="true">Technical Report</a><a class="btn" href="#" data-placeholder-link aria-disabled="true">Model Cards</a><a class="btn" href="#" data-placeholder-link aria-disabled="true">GitHub Code</a><a class="btn" href="#" data-placeholder-link aria-disabled="true">Product Website</a></div><div class="hero-meta"><span class="mosaic-note" id="heroVideoCount">Recorded videos · simultaneous playback</span><button id="heroToggle" type="button">Pause motion</button></div></div>
 </div><a class="scroll-cue" href="#method" aria-label="Explore AWAM">↓</a></section>
 
 <section class="section wrap" id="method">
@@ -102,6 +102,7 @@
 <script src="assets/data/scenes.js"></script>
 <script>
 const scenes=window.AWAM_SCENES,$=id=>document.getElementById(id),reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('[data-placeholder-link]').forEach(link=>link.addEventListener('click',event=>event.preventDefault()));
 const navLinks=[...document.querySelectorAll('.nav-links a')],navSections=navLinks.map(link=>document.querySelector(link.hash));
 function updateNav(){document.querySelector('.nav').classList.toggle('scrolled',scrollY>40);let active=-1;navSections.forEach((section,index)=>{if(section.getBoundingClientRect().top<=120)active=index});navLinks.forEach((link,index)=>{const current=index===active;link.classList.toggle('active',current);if(current)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current')})}
 addEventListener('scroll',updateNav,{passive:true});updateNav();
@@ -124,7 +125,8 @@ $('playTrace').onclick=playTrace;$('traceSpeed').onchange=()=>{if(traceTimer){st
 [[8,'Detect','Placement diverges.'],[9,'Recover','Restore the affected lane.'],[10,'Resume','Return to the placement plan.']].forEach(([i,title,copy])=>{const f=element('figure'),img=element('img');img.src=scenes[0].steps[i].cameras.observer;img.alt=`Bowl stacking step ${i}`;img.loading='lazy';const caption=element('figcaption');caption.append(element('b','',title),element('p','',copy));f.append(img,caption);$('recoveryFrames').append(f)});
 $('jumpRecovery').onclick=()=>{loadScene(0);selectStep(9)};
 const heroVideos=[];
-scenes.filter(s=>s.video).forEach(s=>{const tile=element('div','mosaic-tile'),video=element('video');video.src=s.video;video.poster=s.steps[0].cameras.observer;video.muted=true;video.loop=true;video.playsInline=true;video.preload='auto';video.setAttribute('aria-label',s.title+' recorded execution');heroVideos.push(video);tile.append(video);$('heroMosaic').append(tile)});
+const heroSceneTitles=new Set();scenes.filter(s=>s.video&&!heroSceneTitles.has(s.title)&&heroSceneTitles.add(s.title)).forEach(s=>{const tile=element('div','mosaic-tile'),video=element('video');video.src=s.video;video.poster=s.steps[0].cameras.observer;video.muted=true;video.loop=true;video.playsInline=true;video.preload='auto';video.setAttribute('aria-label',s.title+' recorded execution');heroVideos.push(video);tile.append(video);$('heroMosaic').append(tile)});
+$('heroTaskCount').textContent=`MULTI-TASK EXECUTION · ${heroVideos.length} TASK VIDEOS`;$('heroVideoCount').textContent=`${heroVideos.length} recorded videos · simultaneous playback`;
 function setHero(){heroVideos.forEach(v=>{v.playbackRate=3;if(heroPaused||!heroVisible||document.hidden)v.pause();else v.play().catch(()=>{})});$('heroToggle').textContent=heroPaused?'Play motion':'Pause motion';$('heroToggle').setAttribute('aria-pressed',String(heroPaused))}
 heroVideos.forEach(v=>v.addEventListener('loadedmetadata',setHero));$('heroToggle').onclick=()=>{heroPaused=!heroPaused;setHero()};
 new IntersectionObserver(entries=>{heroVisible=entries[0].isIntersecting&&entries[0].intersectionRatio>.1;setHero()},{threshold:[0,.1]}).observe(document.querySelector('.showreel'));
